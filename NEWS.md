@@ -1,0 +1,3 @@
+# cpss 0.0.1
+
+* Submitted to CRAN.
