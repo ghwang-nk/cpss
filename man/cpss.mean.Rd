@@ -54,15 +54,17 @@ seg_len <- diff(c(0, tau, n))
 mu <- rep(c(0, 14.64, -3.66, 7.32, -7.32, 10.98, -4.39, 3.29, 19.03, 7.68, 15.37, 0), seg_len)
 ep <- 7 * rnorm(n)
 y <- mu + ep
-# res <- cpss.mean(y, algorithm = "SN", dist_min = 10, ncps_max = 20)
-# summary(res)
+\donttest{
+res <- cpss.mean(y, algorithm = "SN", dist_min = 10, ncps_max = 20)
+summary(res)
 # 205  267  307  471  512  820  897  1332  1557  1601  1659
-# plot(res, type = "scatter")
-# plot(res, type = "path")
-# out <- update(res, dim_update = 12)
-# out$cps_update
+plot(res, type = "scatter")
+plot(res, type = "path")
+out <- update(res, dim_update = 12)
+out$cps_update
 # 205  267  307  471  512  820  897 1332 1557 1601 1659 1769
-# out$params_update
+out$params_update
+}
 }
 \references{
 Killick, R., Fearnhead, P., and Eckley, I. A. (2012). Optimal Detection of Changepoints With a Linear Computational Cost. Journal of the American Statistical Association, 107(500):1590–1598.

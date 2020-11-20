@@ -34,17 +34,19 @@
 #' eta <- do.call(c, eta)
 #' p <- 1 / (1 + exp(-eta))
 #' y <- rbinom(n, size = size, prob = p)
+#' \donttest{
 #' pelt_pen_val <- (log(n))^seq(0.5, 2, by = 0.1)
-#' # res <- cpss.glm(
-#' #   formula = cbind(y, size - y) ~ x, family = binomial(),
-#' #   algorithm = "PELT", pelt_pen_val = pelt_pen_val,
-#' #   dist_min = 5, ncps_max = 10
-#' # )
-#' # summary(res)
+#' res <- cpss.glm(
+#'   formula = cbind(y, size - y) ~ x, family = binomial(),
+#'   algorithm = "PELT", pelt_pen_val = pelt_pen_val,
+#'   dist_min = 5, ncps_max = 10
+#' )
+#' summary(res)
 #' # 75  105  175
-#' # coef(res)
+#' coef(res)
 #' # [1,] 0.02540872  0.08389551  0.5284425 -0.4980768
 #' # [2,] 0.57222684 -0.45430385 -0.5203319 -0.4581678
+#' }
 #' @importFrom stats family glm model.response model.matrix
 cpss.glm <- function(formula, family, data = NULL, algorithm = "BS", dist_min = floor(log(n)), ncps_max = ceiling(n^0.4), pelt_pen_val = NULL, pelt_K = 0, wbs_nintervals = 500, criterion = "CV", times = 2) {
 
@@ -120,7 +122,7 @@ cpss.glm <- function(formula, family, data = NULL, algorithm = "BS", dist_min = 
 #' # 80  202  291
 #' coef(res)
 #' # $coef
-#' # [,1]      [,2]        [,3]       [,4]
+#' #             [,1]      [,2]        [,3]       [,4]
 #' # [1,] -0.00188792 1.0457718 -0.03963209 -0.9444813
 #' # [2,]  0.91061557 0.6291965  1.20694409  0.4410036
 #' #

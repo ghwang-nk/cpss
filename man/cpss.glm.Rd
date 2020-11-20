@@ -63,17 +63,19 @@ eta <- lapply(seq(1, length(tau) + 1), function(k) {
 eta <- do.call(c, eta)
 p <- 1 / (1 + exp(-eta))
 y <- rbinom(n, size = size, prob = p)
+\donttest{
 pelt_pen_val <- (log(n))^seq(0.5, 2, by = 0.1)
-# res <- cpss.glm(
-#   formula = cbind(y, size - y) ~ x, family = binomial(),
-#   algorithm = "PELT", pelt_pen_val = pelt_pen_val,
-#   dist_min = 5, ncps_max = 10
-# )
-# summary(res)
+res <- cpss.glm(
+  formula = cbind(y, size - y) ~ x, family = binomial(),
+  algorithm = "PELT", pelt_pen_val = pelt_pen_val,
+  dist_min = 5, ncps_max = 10
+)
+summary(res)
 # 75  105  175
-# coef(res)
+coef(res)
 # [1,] 0.02540872  0.08389551  0.5284425 -0.4980768
 # [2,] 0.57222684 -0.45430385 -0.5203319 -0.4581678
+}
 }
 \references{
 Killick, R., Fearnhead, P., and Eckley, I. A. (2012). Optimal Detection of Changepoints With a Linear Computational Cost. Journal of the American Statistical Association, 107(500):1590–1598.

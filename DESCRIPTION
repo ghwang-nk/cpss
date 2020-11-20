@@ -1,5 +1,5 @@
 Package: cpss
-Title: An R Package for Change-Point Detection by Sample-Splitting Methods
+Title: Change-Point Detection by Sample-Splitting Methods
 Version: 0.0.1
 Authors@R: 
     c(
