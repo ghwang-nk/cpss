@@ -1,3 +1,5 @@
+# cpss (development version)
+
 # cpss 0.0.2
 
 * Resubmitted to CRAN.

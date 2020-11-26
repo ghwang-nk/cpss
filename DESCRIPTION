@@ -1,6 +1,6 @@
 Package: cpss
 Title: Change-Point Detection by Sample-Splitting Methods
-Version: 0.0.2
+Version: 0.0.2.9000
 Authors@R: 
     c(
     person(given = "Guanghui",
