@@ -43,3 +43,5 @@ Imports:
 Suggests: 
     MASS,
     L1pack
+URL: https://github.com/ghwang-nk/cpss
+BugReports: https://github.com/ghwang-nk/cpss/issues
